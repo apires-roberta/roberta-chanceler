@@ -1,0 +1,1 @@
+Tempo de execução: 8.205413818359375 segundos, Uso de memória: 94.33984375 MB

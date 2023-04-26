@@ -4,6 +4,11 @@ import mysql.connector
 import sys
 import time
 import random
+import psutil
+
+process = psutil.Process()
+
+start_time = time.time()
 
 # Configuração do banco de dados
 db = mysql.connector.connect(
@@ -81,3 +86,15 @@ while nivel > 0:
         plt.ylabel("Level")
         plt.legend()
         plt.show()
+
+list_memory.append(process.memory_info().rss / 1024 / 1024)
+end_time = time.time()
+
+print("Lista de Memória--------------------------")
+print(list_memory)
+print("Lista de Tempo--------------------------")
+print(list_time)
+#print(f'Tempo de execução: {end_time - start_time} segundos, Uso de memória: {process.memory_info().rss / 1024 / 1024} MB')
+        
+    
+        
